@@ -1,0 +1,2 @@
+# sosiologi-
+latihan soal
