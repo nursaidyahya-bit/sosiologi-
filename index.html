@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pembelajaran Sosiologi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        .materi {
+            background-color: #e8f4f8;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .kuis {
+            background-color: #fffbc8;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #f1c40f;
+        }
+        .soal {
+            margin-bottom: 20px;
+        }
+        .opsi {
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+            background: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .opsi:hover {
+            background: #f1f2f6;
+        }
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #219150;
+        }
+        #hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📚 Belajar Sosiologi</h1>
+
+    <div class="materi">
+        <h2>1. Interaksi Sosial 🤝</h2>
+        <p><strong>Interaksi sosial</strong> adalah hubungan timbal balik antarindividu, antarkelompok, atau antara individu dan kelompok. Interaksi ini adalah dasar dari semua proses sosial.</p>
+        <p>Agar interaksi sosial bisa terjadi, harus memenuhi dua syarat utama:</p>
+        <ul>
+            <li><strong>Kontak Sosial:</strong> Bertemunya dua pihak atau lebih, baik secara fisik maupun melalui alat teknologi (seperti telepon).</li>
+            <li><strong>Komunikasi:</strong> Proses penyampaian pesan dari satu pihak ke pihak lain sehingga terjadi pemahaman makna.</li>
+        </ul>
+
+        <h2>2. Stratifikasi Sosial 🏰</h2>
+        <p><strong>Stratifikasi sosial</strong> adalah penggolongan masyarakat ke dalam kelas-kelas secara bertingkat (hierarkis). Pembedaan ini terjadi karena ada sesuatu yang dihargai lebih oleh masyarakat, seperti <strong>Kekayaan 💰, Kekuasaan 👑, Kehormatan ✨, atau Ilmu Pengetahuan 📚</strong>.</p>
+        <p>Sifat stratifikasi terbagi menjadi dua:</p>
+        <ul>
+            <li><strong>Terbuka 🔓:</strong> Setiap orang punya kesempatan naik ke lapisan atas melalui usaha (misalnya melalui pendidikan tinggi atau kerja keras). Ilmu pengetahuan adalah kriteria utama sistem terbuka ini.</li>
+            <li><strong>Tertutup 🔒:</strong> Status seseorang ditentukan sejak lahir dan sulit diubah (misalnya sistem kasta atau gelar kebangsawanan).</li>
+        </ul>
+    </div>
+
+    <div class="kuis">
+        <h2>Uji Pemahamanmu 📝</h2>
+        
+        <div class="soal">
+            <p><strong>1. Dua pemuda saling melambaikan tangan dari seberang jalan, tetapi mereka tidak saling berbicara. Apakah syarat interaksi sosial yang belum terpenuhi pada kejadian tersebut?</strong></p>
+            <label class="opsi"><input type="radio" name="soal1" value="salah"> Kontak sosial primer</label>
+            <label class="opsi"><input type="radio" name="soal1" value="salah"> Kontak sosial sekunder</label>
+            <label class="opsi"><input type="radio" name="soal1" value="benar"> Komunikasi</label>
+            <label class="opsi"><input type="radio" name="soal1" value="salah"> Akomodasi</label>
+        </div>
+
+        <div class="soal">
+            <p><strong>2. Andi berasal dari keluarga petani miskin. Ia belajar dengan giat, mendapatkan beasiswa kedokteran, dan kini menjadi dokter spesialis bedah yang dihormati di kotanya. Kesuksesan Andi menunjukkan bahwa masyarakatnya menganut sistem stratifikasi sosial yang bersifat...</strong></p>
+            <label class="opsi"><input type="radio" name="soal2" value="salah"> Tertutup</label>
+            <label class="opsi"><input type="radio" name="soal2" value="benar"> Terbuka</label>
+            <label class="opsi"><input type="radio" name="soal2" value="salah"> Campuran</label>
+            <label class="opsi"><input type="radio" name="soal2" value="salah"> Statis</label>
+        </div>
+
+        <button onclick="periksaJawaban()">Kumpulkan Jawaban</button>
+        <div id="hasil"></div>
+    </div>
+</div>
+
+<script>
+    function periksaJawaban() {
+        const j1 = document.querySelector('input[name="soal1"]:checked');
+        const j2 = document.querySelector('input[name="soal2"]:checked');
+        const kotakHasil = document.getElementById('hasil');
+
+        if (!j1 || !j2) {
+            kotakHasil.style.display = "block";
+            kotakHasil.style.backgroundColor = "#ffdddd";
+            kotakHasil.style.color = "#d32f2f";
+            kotakHasil.textContent = "⚠️ Tolong jawab semua pertanyaan terlebih dahulu!";
+            return;
+        }
+
+        let skor = 0;
+        if (j1.value === "benar") skor += 50;
+        if (j2.value === "benar") skor += 50;
+
+        kotakHasil.style.display = "block";
+
+        if (skor === 100) {
+            kotakHasil.style.backgroundColor = "#d4edda";
+            kotakHasil.style.color = "#155724";
+            kotakHasil.innerHTML = "Luar Biasa! 🎉 Nilaimu 100.<br>Kamu sudah memahami materi Interaksi dan Stratifikasi Sosial dengan sangat baik.";
+        } else if (skor === 50) {
+            kotakHasil.style.backgroundColor = "#fff3cd";
+            kotakHasil.style.color = "#856404";
+            kotakHasil.innerHTML = "Bagus! 👍 Nilaimu 50.<br>Satu jawabanmu sudah tepat, tapi coba baca ulang materinya untuk memperbaiki jawaban yang kurang tepat.";
+        } else {
+            kotakHasil.style.backgroundColor = "#f8d7da";
+            kotakHasil.style.color = "#721c24";
+            kotakHasil.innerHTML = "Jangan menyerah! 💪 Nilaimu 0.<br>Yuk, baca kembali materinya pelan-pelan dan coba jawab lagi.";
+        }
+    }
+</script>
+
+</body>
+</html>
